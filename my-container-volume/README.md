@@ -1,24 +1,45 @@
 # learning-docker
-Docker welcome - Yuni Nur Rohmatilah
+Container Volume - Yuni Nur Rohmatilah
 
-### Run a new Container
-docker run -d -p 8080:80 --name welcome1 docker/welcome-to-docker
+### 1. Menghapus container postgre lama 
 
-<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/b910841e-45b6-4228-96ca-7f3280527bc3">
+### 2. Run Docker SQL "my-postgres-yuni" with "my-pg-volume-yuni"
+#### docker run -d \
+#### > --name my-postgres-yuni \
+#### > -e POSTGRES_USER=postgres \
+#### > -e POSTGRES_PASSWORD=password \
+#### > -v my-pg-volume-yuni:/var/lib/postgresql/data \
+#### > -p 5430:5432 postgres 
 
-### Try In Browser 
-<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/20bfa45e-5057-473d-8f51-931a454ca2db">
+<img width="995" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/9eb38ef5-ace1-46ad-a7e0-74aa6337a14b">
 
-### See Logs of running welcome1 container 
-<img width="682" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/2a5c5fef-0327-4227-b9e6-253fe28ca309">
+### 3. Connection Succes
+#### Start Container
+![image](https://github.com/yuninurr/learning-docker/assets/89186114/a49a276b-521e-41cc-a1a0-26a29efaad9d)
+#### Connect Database 
+<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/28079abe-2957-45cc-95c5-293d5711be93">
 
-### Execute a Command inside running welcome1 container 
-<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/68ebffa0-6294-4adf-9648-7ba0bc6bd595">
+#### 4. Create New Table In PgAdmin
+<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/a3b168d4-d0a8-4951-aca6-fd09f135409e">
 
-### Stop Container and see latest logs 
-docker stop welcome1 
-docker logs -f --tail 10 welcome1
-<img width="682" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/250a9ade-38e9-41b9-b84c-23f11a25102c">
+### 5. Stop and Delete First Container
+![image](https://github.com/yuninurr/learning-docker/assets/89186114/c97b980c-8acf-4eba-a0d1-12bf44d0c8b5)
+![image](https://github.com/yuninurr/learning-docker/assets/89186114/031ab8e4-263e-4d53-83a6-49897ae52bf7)
+
+### 6. New name Postgres
+#### docker run -d \
+#### --name my-postgres-v2-yuni \
+#### -e POSTGRES_USER=postgres \
+#### -e POSTGRES_PASSWORD=password \
+#### -v my-pg-volume-yuni:/var/lib/postgresql/data \
+#### -p 5430:5432 postgres
+<img width="1001" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/da2edbe2-89dc-4531-a844-d7edaa67d1b1">
+<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/c1df3770-8398-4ffa-8d0e-d2494ae1b4c7">
+<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/8312a896-1066-4b3c-8abf-435a2e9adc39">
+
+### 7. Check Table in PgAdmin
+<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/f92a0ad1-a7b5-416f-a7ed-9a5f164a74e9">
+
 
 
 
