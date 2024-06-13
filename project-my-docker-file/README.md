@@ -1,24 +1,29 @@
 # learning-docker
-Docker welcome - Yuni Nur Rohmatilah
+## Project 1 - Build Docker File to Docker Image
 
-### Run a new Container
-docker run -d -p 8080:80 --name welcome1 docker/welcome-to-docker
+## 1. Create a new Golang project that serve http
+- Path "/", do print string/html text of your favorite wise word
+- When you access path "" , also print to log/console using fm. Println with text "Ouch!"
+- Start HTTP on port 77 (or 78 if your chrome blocked the port)
+- - Modification go.mod line 3 "go 1...."change into "go 1.21"
+ 
+## 2. Create file "AUTHORS.md" and "LINKS.md" within same folder with "Dockerfile"
+- Edit "AUTHORS.md" file and fill it with your first name or your fake name
+- Edit "LINKS.md" file and fill it with your github profile link
 
-<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/b910841e-45b6-4228-96ca-7f3280527bc3">
+## 3. Create Dockerfile to build and run your golang project
+- Use Base Image "golang:1.21"
+- Set WORKDIR with /myapp
+- RUN some command "go version" after WORKDIR
+- COPY "AUTHORS.md" to image BEFORE run build golang (go build)
+- COPY "LINKS.md" to image BEFORE run build golang. (go build)
+- Make golang build output with name "my-go-app" and make sure it will run correctly
 
-### Try In Browser 
-<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/20bfa45e-5057-473d-8f51-931a454ca2db">
+## 4. Build Dockerfile image with name "my-go-app:v2"
 
-### See Logs of running welcome1 container 
-<img width="682" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/2a5c5fef-0327-4227-b9e6-253fe28ca309">
+## 5. Run the image into container with name "go-app" and expose to port host 5555
 
-### Execute a Command inside running welcome1 container 
-<img width="1440" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/68ebffa0-6294-4adf-9648-7ba0bc6bd595">
-
-### Stop Container and see latest logs 
-docker stop welcome1 
-docker logs -f --tail 10 welcome1
-<img width="682" alt="image" src="https://github.com/yuninurr/learning-docker/assets/89186114/250a9ade-38e9-41b9-b84c-23f11a25102c">
-
+## 6. Access your golang inside docker via localhost:5555 and see logs of your container
+"go-app"
 
 
