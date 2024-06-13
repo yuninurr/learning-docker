@@ -5,7 +5,7 @@
 - Path "/", do print string/html text of your favorite wise word
 - When you access path "" , also print to log/console using fm. Println with text "Ouch!"
 - Start HTTP on port 77 (or 78 if your chrome blocked the port)
-- - Modification go.mod line 3 "go 1...."change into "go 1.21"
+- Modification go.mod line 3 "go 1...."change into "go 1.21"
  
 ## 2. Create file "AUTHORS.md" and "LINKS.md" within same folder with "Dockerfile"
 - Edit "AUTHORS.md" file and fill it with your first name or your fake name
